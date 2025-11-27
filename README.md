@@ -1,27 +1,30 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+**# Discover Dollar DevOps Assignment Completed ✅** 
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+This project is a containerized MEAN stack CRUD application deployed on AWS EC2 with CI/CD automation.
 
-## Project setup
+## Tech Stack
+- MongoDB (Database)
+- Node.js + Express (Backend)
+- Angular 15 (Frontend)
+- Nginx (Reverse Proxy + Static Hosting)
+- Docker + Docker Compose
+- Jenkins CI/CD
+- GitHub + Docker Hub
 
-### Node.js Server
+## Features
+- Add, update, delete, and search tutorials.
+- Angular UI served via Nginx → backend API routed via `/api/`.
+- MongoDB stores persistent tutorial records.
 
-cd backend
+## Deployment Workflow
+1. Code pushed to GitHub.
+2. Jenkins pipeline builds Docker images for frontend & backend.
+3. Jenkins pushes images to Docker Hub.
+4. Jenkins runs `docker-compose pull && docker-compose up -d`.
+5. Latest version automatically deployed on EC2.
 
-npm install
+Docker Hub images:
+- `chrisdee10/dd-frontend:latest`
+- `chrisdee10/dd-backend:latest`
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
-
-Run `node server.js`
-
-### Angular Client
-
-cd frontend
-
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+CI/CD enabled with Jenkins using Docker login credentials and automated deploy.
