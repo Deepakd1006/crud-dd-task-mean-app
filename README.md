@@ -1,4 +1,4 @@
-**## Discover Dollar DevOps Assignment Completed ✅** 
+#### Discover Dollar DevOps Assignment Completed ✅
 ![App UI](screenshots/App-UI-1.png)
 
 This project is a containerized MEAN stack CRUD application deployed on AWS EC2 with CI/CD automation.
