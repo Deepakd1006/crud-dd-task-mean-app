@@ -28,3 +28,52 @@ Docker Hub images:
 - `chrisdee10/dd-backend:latest`
 
 CI/CD enabled with Jenkins using Docker login credentials and automated deploy.
+
+## 📷 Screenshots
+
+Below are screenshots of the application and deployment setup.
+
+---
+
+### 🖥 Application UI
+
+![App UI](screenshots/App-UI-1.png)
+
+![Second UI Page](screenshots/App-UI-2.png)
+
+---
+
+### 🐳 Docker Containers Running (`docker ps`)
+
+![Docker Containers](screenshots/Terminal_Docker_info.png)
+
+---
+
+### 🐳 Docker Hub Repository
+
+![Docker Hub](screenshots/DockerHub_images.png)
+
+---
+
+### ⚙️ CI/CD - Jenkins Pipeline View
+
+![Jenkins Pipeline](screenshots/Jenkins_StageView.png)
+
+---
+
+### 🏗 GitHub Project Repository
+
+![GitHub Repo](screenshots/GitCode .png)
+
+---
+
+### ☁ AWS EC2 Console (Optional)
+
+![AWS Console](screenshots/AWS_console.png)
+
+---
+
+
+
+
+
