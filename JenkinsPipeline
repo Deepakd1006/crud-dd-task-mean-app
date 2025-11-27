@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_USERNAME = "chrisdee10"
+        REPO_URL = "https://github.com/Deepakd1006/crud-dd-task-mean-app.git"
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', url: "${REPO_URL}"
+            }
+        }
+
+        stage('Build Docker Images') {
+            steps {
+                sh """
+                docker build -t ${DOCKERHUB_USERNAME}/dd-backend:latest backend
+                docker build -t ${DOCKERHUB_USERNAME}/dd-frontend:latest frontend
+                """
+            }
+        }
+
+        stage('Push Images to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub',
+                    usernameVariable: 'USER',
+                    passwordVariable: 'PASS'
+                )]) {
+                    sh """
+                    echo "$PASS" | docker login -u "$USER" --password-stdin
+                    docker push ${DOCKERHUB_USERNAME}/dd-backend:latest
+                    docker push ${DOCKERHUB_USERNAME}/dd-frontend:latest
+                    """
+                }
+            }
+        }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                sh """
+                docker-compose pull
+                docker-compose up -d --remove-orphans
+                """
+            }
+        }
+    }
+}
