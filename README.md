@@ -63,12 +63,6 @@ Below are screenshots of the application and deployment setup.
 
 ---
 
-### 🏗 GitHub Project Repository
-
-![GitHub Repo](screenshots/GitCode.png)
-
----
-
 ### ☁ AWS EC2 Console (Optional)
 
 ![AWS Console](screenshots/AWS_console.png)
