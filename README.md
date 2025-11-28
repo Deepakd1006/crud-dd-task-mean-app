@@ -65,7 +65,7 @@ Below are screenshots of the application and deployment setup.
 
 ### 🏗 GitHub Project Repository
 
-![GitHub Repo](screenshots/GitCode .png)
+![GitHub Repo](screenshots/GitCode.png)
 
 ---
 
